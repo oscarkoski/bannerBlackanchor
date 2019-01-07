@@ -1,0 +1,326 @@
+/* apply a natural box layout model to all elements */
+ *, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3,
+h4, h5, h6, p, blockquote, pre, a, abbr, acronym,
+address, big, cite, code, del, dfn, em, font, img, ins,
+kbd, q, s, samp, small, strike, strong, sub, sup, tt,
+var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+margin: 0;
+padding: 0;
+border: 0;
+outline: 0; /* elimina el bordel del foco del elemento */
+font-weight: inherit;
+font-style: inherit;
+font-size: 100%;
+font-family: inherit;
+vertical-align: baseline;
+}
+:focus { outline: 0;}
+a, a:link, a:visited, a:hover, a:active{text-decoration:none}
+table { border-collapse: separate;border-spacing: 0;}
+th, td {text-align: left; font-weight: normal;}
+img, iframe {border: none; text-decoration:none;}
+ol, ul {list-style: none;}
+input, textarea, select, button {font-size: 100%;font-family: inherit;}
+select {margin: inherit;}
+hr {margin: 0;padding: 0;border: 0;color: #000;background-color: #000;height: 1px}
+
+
+
+
+#container {
+    position: relative;
+    width:726px;
+    height:88px;
+    border: 1px solid #000;
+    overflow: hidden;
+    cursor: pointer;
+    font-family: 'alternate';
+    -webkit-font-smoothing : antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+#ad{
+  
+    background: url(../img/bg.jpg) no-repeat center;
+    background-size: cover;
+    opacity: 0;
+    width: 728px;
+    display: block;
+    height: 100%;
+    transition: all 0.5s ease-in-out;
+}
+
+.exit{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+#frames{
+width: 500%;
+    height: 90px;
+    opacity: 1;
+    transition: .35s;
+    position: absolute;
+    top: 0%;
+    right: 0;
+    opacity: 0;
+    margin-right: 157px;
+
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.190, 1.000, 0.220, 1.000);
+}
+
+
+#frames >*{
+
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    position: absolute;
+    transition: all 0.5s cubic-bezier(0.190, 1.000, 0.220, 1.000);
+}
+    .frame1{
+    right: 0;
+}
+.frame2{
+    right: 300px;
+}
+.frame3{
+    right: 600px;
+}
+.frame4{
+    right: 900px;
+}
+.frameFinal{
+      right: 1200px;
+    top: 3% !important;
+}
+
+.logo {
+     position: absolute;
+    width: 70px;
+   z-index: 3;
+    transition: all 1.5s cubic-bezier(0.190, 1.000, 0.220, 1.000);
+  
+    left: 10px;
+  
+    top: 50%;
+    margin-top: -35px;
+}
+#cajaTexto{
+height: 100%;
+width: 275px;
+position: absolute;
+left: 0;
+z-index: 2;
+background: url(../img/bg.jpg) no-repeat;
+
+
+}
+
+#cajaTexto .t1, #cajaTexto .t2{
+     font-family: 'Montserrat Alternates', sans-serif;
+    color: #000;
+    font-weight: 400;
+    font-size: 16px;
+    left: 102px;
+    margin: 0 auto;
+    top: 15px;
+    position: absolute;
+    text-transform: uppercase;
+    transition: all .3s cubic-bezier(0.13, 0.6, 0.51, 0.74);
+    text-align: center;
+    line-height: 1.3;
+}
+#back, #next{
+    position: absolute;
+    z-index: 11;
+    width: 25px;
+    height: 25px;
+    top: 50%;
+    margin-top: -12px;
+    cursor: pointer;
+}
+#back{
+    left: 255px;
+}
+#next{
+    right: 146px;
+}
+#back img, #next img{
+    width: 14px;
+    margin-top: 5px;
+}
+#back img{
+    float: left;
+}
+#next img{
+    float: right;
+}
+.t1{
+  
+    transform-origin: 0% 100%;
+
+    transition: all .3s cubic-bezier(0.13, 0.6, 0.51, 0.74);
+}
+.t2{
+    width: 133px;
+
+ transform: rotateX(90deg);
+    opacity: 0;
+    
+}
+.gorra{
+       width: 100%;
+    position: absolute;
+    right: 3px;
+}
+.colores{
+
+      position: absolute;
+    top: 205px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 70px;
+  
+}
+
+.price{
+      font-family: 'Montserrat Alternates', sans-serif;
+    /* font-weight: bold; */
+    color: #000;
+    /* width: 140px; */
+    font-size: 14px;
+    top: 10px;
+    position: absolute;
+    line-height: 1.3;
+    text-align: left;
+    z-index: 2;
+    left: 161px;
+}
+.price span:after{
+    content: "";
+    height: 1px;
+    background-color:#5d2325;
+    position: relative;
+    top: -12px;
+    left: -2px;
+    width: 33%;
+    display: block;
+}
+.price span{
+ color: #5d2325;
+}
+.price strong{
+    position: relative;
+    top: -39px;
+    /* right: 10px; */
+    left: 58px;
+    font-weight: 700;
+    font-size: 1.2em;
+}
+#boton span{
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+}
+#area_boton{
+      width: 153px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    z-index: 2;
+    background: url(../img/bg.jpg) no-repeat;
+       background-position-x: -575px;
+}
+
+#boton{
+   font-family: 'Montserrat Alternates', sans-serif;
+    color: #fff;
+    text-align: center;
+    line-height: 47px;
+    display: block;
+    font-size: 15px;
+    width: 100px;
+    height: 45px;
+    position: absolute;
+    overflow: hidden;
+    box-sizing: inherit;
+    transition-property: all;
+    transition-duration: .6s;
+    transition-timing-function: ease;
+    background-color: #5d2325;
+    top: 50%;
+    margin-top: -22px;
+    right: 20px;
+    z-index: 11;
+    cursor: pointer;
+        
+}
+
+   #boton  span {
+    z-index: 20;
+    color: #fff;
+    line-height: 30px;
+    
+  }
+  
+  #boton  span:after {
+    background: #fff;
+    content: "";
+    height: 155px;
+    left: -75px;
+    opacity: .2;
+    position: absolute;
+    top: -50px;
+    transform: rotate(35deg);
+    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+    width: 50px;
+    z-index: -10;
+  }
+  #boton  span.changed:after { 
+/* this selector is more specific, so it takes precedence over the other :after */
+  left:156px;
+}
+
+
+
+  
+
+
+/*LOADER*/
+
+#contLoading{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+#loading{
+    background: url(../img/loading.svg);
+    width: 54px;
+    background-size: contain;
+    height: 54px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -27px;
+    margin-top: -27px;
+    z-index: 1;
+
+}
+

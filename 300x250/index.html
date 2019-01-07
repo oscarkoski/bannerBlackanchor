@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+        <meta name="ad.size" content="width=300,height=250">
+        <title>Black Anchor 300x250</title>
+        <link href="css/style.css" rel="stylesheet">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="js/prefixfree.min.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+        <script type="text/javascript">
+            var clickTag = "https://www.myblackanchor.com/collections/all";
+            function Cargado() {
+                $('#contLoading').fadeOut(500);
+                initBanner();
+            }
+        </script>
+    </head>
+    <body style="background-color:#fff" onload="Cargado();">
+        <div id="container">
+            <div id="contLoading">
+                <div id="loading"></div>
+            </div>
+            <div class="exit" id="adv"></div>
+            <div id="ad">
+                <div id="frames">
+                <div class="frame1">
+                    <img class="gorra" src="img/oski-2.jpg">
+              
+                    <div class="price">
+                        <p>BLACK ANCHOR URBAN - <br>
+                            UNISEX <br>
+                            <span>29.90 €</span><br>
+                            <strong>22.90 €</strong></p>
+                    </div>
+                </div>
+                
+                <div class="frame2">
+                    <img class="gorra" src="img/oski2.jpg">
+               
+                    <div class="price">
+                        <p>BLACK ANCHOR - <br>
+                       
+                            UNISEX <br>
+                            <span>31.90 €</span><br>
+                            <strong>23.90 €</strong></p>
+                    </div>
+                </div>
+                <div class="frame3">
+                    <img class="gorra" src="img/oski-3.jpg">
+               
+                    <div class="price">
+                        <p>BLACK ANCHOR  REBEL - <br>
+                            UNISEX <br>
+
+                            <span>29.90 €</span><br>
+                            <strong>22.90 €</strong></p>
+                    </div>
+                </div>
+                <div class="frame4">
+                    <img class="gorra" src="img/oski4.jpg">
+                
+                    <div class="price">
+                        <p>BLACK ANCHOR  LIMBO - <br>
+                            UNISEX <br>
+
+                            <span>29.90 €</span><br>
+                            <strong>22.90 €</strong></p>
+                    </div>
+                </div>
+                <div class="frameFinal">
+                    <img class="gorra" src="img/final.jpg">
+                    
+                </div>
+                    </div>
+                <div id="back" onclick="pasarFoto('prev')">
+                    <img src="img/back.svg">
+                    
+                </div>
+                <div id="next" onclick="pasarFoto('next')">
+                        <img src="img/next.svg">
+                </div>
+
+                <img class="logo" src="img/logo.png">
+
+                <div id="cajaTexto">
+                    <p class="t1">PUESTA QUEDA AÚN MEJOR.</p>
+                    <p class="t2">DESCUBRE TU BLACK ANCHOR.</p>
+                </div>
+ 
+                <div id="boton">
+                    <span>COMPRAR</span>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
